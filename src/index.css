@@ -1,68 +1,90 @@
+@import "tailwindcss";
+
+
+/* dark variant */
+@custom-variant dark (&:is(.dark *));
+
+/* =========================
+   Root Brand Tokens
+========================= */
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  /* Brand colors */
+  --primary: #14462e;
+  --secondary: #227c52;
+  --accent: #5ebd93;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  /* Layout colors */
+  --background: #f6f6f7;
+  --card: #fffefe;
+  --text: #14462e;
+  --text-light: #f6f6f7;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+  /* Extra semantic */
+  --info: #05c3fb;
+  --success: #1abe17;
+  --warning: #eab300;
+  --danger: #e82646;
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  /* Radius */
+  --radius-sm: 5px;
+  --radius-md: 6px;
+  --radius-lg: 7px;
+  --radius-xl: 9px;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+/* =========================
+   Tailwind Theme Mapping
+========================= */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--text);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--text);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: #ffffff;
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: #ffffff;
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: #14462e;
+
+  --color-muted: #eef2f1;
+  --color-muted-foreground: #5f6d67;
+
+  --color-border: #dde2ee;
+  --color-input: #dde2ee;
+  --color-ring: var(--primary);
+
+  --color-info: var(--info);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-destructive: var(--danger);
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+/* =========================
+   Dark Mode
+========================= */
+.dark {
+  --background: #0f1f18;
+  --card: #162a21;
+  --text: #e8f2ed;
+
+  --color-border: #223a30;
+  --color-input: #223a30;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+/* =========================
+   Base Layer
+========================= */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
   }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
+
+  body {
+    @apply bg-background text-foreground;
   }
 }
