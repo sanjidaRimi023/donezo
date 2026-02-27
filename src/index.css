@@ -1,8 +1,12 @@
 @import "tailwindcss";
 
-
 /* dark variant */
 @custom-variant dark (&:is(.dark *));
+
+body {
+  font-family: "Mona Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  
+}
 
 /* =========================
    Root Brand Tokens
@@ -16,7 +20,6 @@
   /* Layout colors */
   --background: #f6f6f7;
   --card: #fffefe;
-  --text: #14462e;
   --text-light: #f6f6f7;
 
   /* Extra semantic */
