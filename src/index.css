@@ -1,28 +1,28 @@
 @import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400;1,500&display=swap");
 
-/* dark variant */
 @custom-variant dark (&:is(.dark *));
 
 body {
-  font-family: "Mona Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  
+  font-family: "Roboto", sans-serif;
 }
 
-/* =========================
-   Root Brand Tokens
-========================= */
 :root {
-  /* Brand colors */
+  /* Brand */
   --primary: #14462e;
   --secondary: #227c52;
   --accent: #5ebd93;
 
-  /* Layout colors */
+  /* Layout */
   --background: #f6f6f7;
   --card: #fffefe;
-  --text-light: #f6f6f7;
 
-  /* Extra semantic */
+  /* Text System */
+  --text: #4B5563;        /* default body text */
+  --heading: #111827;     /* strong heading */
+  --subtle: #6B7280;      /* lighter paragraph */
+
+  /* Semantic */
   --info: #05c3fb;
   --success: #1abe17;
   --warning: #eab300;
@@ -35,12 +35,11 @@ body {
   --radius-xl: 9px;
 }
 
-/* =========================
-   Tailwind Theme Mapping
-========================= */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--text);
+  --color-heading: var(--heading);
+  --color-subtle: var(--subtle);
 
   --color-card: var(--card);
   --color-card-foreground: var(--text);
@@ -67,13 +66,14 @@ body {
   --color-destructive: var(--danger);
 }
 
-/* =========================
-   Dark Mode
-========================= */
+
 .dark {
   --background: #0f1f18;
   --card: #162a21;
+
   --text: #e8f2ed;
+  --heading: #ffffff;
+  --subtle: #b7c9c1;
 
   --color-border: #223a30;
   --color-input: #223a30;
@@ -89,5 +89,17 @@ body {
 
   body {
     @apply bg-background text-foreground;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-heading font-semibold;
+  }
+
+  p {
+    @apply text-foreground;
+  }
+
+  .text-subtle {
+    @apply text-subtle;
   }
 }
