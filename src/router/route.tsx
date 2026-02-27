@@ -3,6 +3,7 @@ import RootLayout from "../Layouts/RootLayout";
 import LoginPage from "../pages/Login/Login";
 import { ProtectedRoute } from "./ProtectRoute";
 import DashboardLayout from "../Layouts/DashboardLayout";
+import  DashboardHome from "../pages/Dashboard/components/DashboardHome";
 
 
 export const router = createBrowserRouter([
@@ -24,7 +25,7 @@ export const router = createBrowserRouter([
             children: [
               {
                 index: true,
-                element: <div>hi</div>, // This is the actual data page
+                element: <DashboardHome/>, // This is the actual data page
               },
               {
                 path: "settings",

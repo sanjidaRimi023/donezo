@@ -79,9 +79,7 @@ body {
   --color-input: #223a30;
 }
 
-/* =========================
-   Base Layer
-========================= */
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -92,7 +90,7 @@ body {
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply text-heading font-semibold;
+    @apply text-heading;
   }
 
   p {

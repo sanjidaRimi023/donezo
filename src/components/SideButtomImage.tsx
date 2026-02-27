@@ -13,11 +13,11 @@ export default function SideButtomImage() {
           <Award size={18} />
         </div>
 
-        <h2 className="text-lg leading-tight">
+        <h1 className="text-lg text-white leading-tight">
           Download our mobile application
-        </h2>
+        </h1>
 
-        <p className="text-sm mt-1">
+        <p className="text-sm text-gray-200 mt-1">
           Get easy access anytime
         </p>
 
