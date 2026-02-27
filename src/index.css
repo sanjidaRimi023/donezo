@@ -17,10 +17,6 @@ body {
   --background: #f6f6f7;
   --card: #fffefe;
 
-  /* Text System */
-  --text: #4B5563;        /* default body text */
-  --heading: #111827;     /* strong heading */
-  --subtle: #6B7280;      /* lighter paragraph */
 
   /* Semantic */
   --info: #05c3fb;
@@ -89,9 +85,6 @@ body {
     @apply bg-background text-foreground;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    @apply text-heading;
-  }
 
   p {
     @apply text-foreground;

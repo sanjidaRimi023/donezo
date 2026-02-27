@@ -1,25 +1,21 @@
-
 import { useState } from "react";
 import { Outlet } from "react-router";
-import TopNav from "../components/TopNav";
 import Sidebar from "../components/Sidebar";
-
+import TopNav from "../components/TopNav";
 
 const DashboardLayout = () => {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
 
   return (
     <div className="flex h-screen bg-white overflow-hidden">
-      {/* Sidebar - Fixed on Desktop, Drawer on Mobile */}
       <Sidebar isOpen={isSidebarOpen} setIsOpen={setSidebarOpen} />
 
       <div className="flex-1 flex flex-col min-w-0 overflow-hidden">
-        {/* Top Navigation */}
         <TopNav onMenuClick={() => setSidebarOpen(true)} />
 
         {/* Main Content Area */}
-        <main className="flex-1 overflow-y-auto p-4 md:p-8">
-          <div className="container mx-auto">
+        <main className="flex-1 overflow-y-auto">
+          <div className="bg-background min-h-screen rounded-2xl p-8">
             <Outlet />
           </div>
         </main>

@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { axiosPublic } from "../api/axios";
+import type { TStats } from "../types/types";
 
-export default function useOverviewCard() {
-  const [data, setData] = useState(null);
+export default function useOverviewCardData() {
+  const [data, setData] = useState<TStats | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string|null>(null);
   useEffect(() => {
