@@ -1,9 +1,9 @@
 import { ArrowUp, ArrowUpRight } from "lucide-react";
 
-import useOverviewCardData from "../../../hooks/useOverviewCardData";
 import { OverviewCardSkeleton } from "./OverviewCardSkeleton";
+import useOverviewCardData from "../../../../hooks/useOverviewCardData";
 
-const DashboardOverview = () => {
+const OverViewCard = () => {
   const { data, loading, error } = useOverviewCardData();
   if (loading) return <OverviewCardSkeleton />;
   if (error) return <div className="text-red-500 p-6">{error}</div>;
@@ -64,4 +64,4 @@ const DashboardOverview = () => {
   );
 };
 
-export default DashboardOverview;
+export default OverViewCard;
