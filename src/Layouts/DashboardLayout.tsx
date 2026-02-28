@@ -15,9 +15,9 @@ const DashboardLayout = () => {
 
         {/* Main Content Area */}
         <main className="flex-1 overflow-y-auto">
-          <div className="bg-background min-h-screen rounded-2xl p-8">
+          <section className="bg-background min-h-screen rounded-2xl p-8">
             <Outlet />
-          </div>
+          </section>
         </main>
       </div>
     </div>
